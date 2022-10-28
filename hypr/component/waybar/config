@@ -1,0 +1,85 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 51, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 2, // Gaps between modules (4px)
+    // Choose the order of the modules
+    // "margin-left":25,
+    // "margin-right":25,
+    "margin-bottom":-11,
+    //"margin-top":5,
+    "modules-left": ["wlr/workspaces"],
+    "modules-right": ["cpu","memory","network","custom/cycle_wall","battery","tray"],
+    "modules-center": ["clock"],
+    // Modules configuration
+
+
+    // custom modules //
+    "custom/cycle_wall":{
+        "format":"       ",
+        // "interval": 1,
+        "on-click": "~/.config/hypr/scripts/wall",
+        "tooltip": false
+
+    },
+    // End of custom modules //
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-active": " {icon} ",
+        "on-click": "activate"
+        // "format-icons":{
+        //   "10":"10"
+        // }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 8,
+        "show-passive-items": false
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip": false,
+        "interval": 60,
+        "format": "{:%H:%M}",
+        "max-length": 25,
+        "on-click": "alacritty  --class calendar -e calcure"
+    },
+    "cpu": {
+        "interval":1,
+        "format": "{icon0} {icon1} {icon2} {icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+    "memory": {
+        "format": "{percentage}% ",
+        "interval": 1,
+        "on-click": "alacritty --class system_monitor -e btop",
+        "max-lenght": 35
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 50,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "{icon}  {capacity}%",
+        "format-plugged": "{icon} {capacity}%",
+         "format-good": "", // An empty format will hide the module
+         "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+         "interface": "wlan0",
+        "format-wifi":  " 直  ",
+        "format-disconnected": "disconnected wifi",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "on-click": "/home/obsy/.local/bin/rofi-wifi-menu"
+    }
+}
+
