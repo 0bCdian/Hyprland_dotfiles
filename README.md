@@ -46,7 +46,6 @@ ranger calcure btop nvim most
 - Firefox with simplify darkish css theme (get started with theming firefox [here](https://www.reddit.com/r/FirefoxCSS/wiki/index/tutorials/))
 - Waybar (the bar you see at the top, GE Inspira font used)
 - Swaylockd (locking screen)
-- 
 
 ## Special thanks to 
 - https://github.com/flick0 for the base config
