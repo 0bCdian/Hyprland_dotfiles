@@ -1,0 +1,98 @@
+/*================ GLOBAL COLORS ================*/
+
+:root {
+    --accent-color: 60, 56, 54;
+    --secondary-accent-color: 235, 219, 178;
+    --third-accent-color: 235, 219, 178;
+    --light-color: 255, 255, 255;
+    --dark-color: 60, 56, 54;
+    --caption-min-color: 215, 153, 33;
+    --caption-max-color: 69, 133, 136;
+    --caption-close-color: 177, 98, 134;
+}
+
+
+/*================ DARK MODE ================*/
+
+:root:-moz-lwtheme-brighttext,
+.sidebar-panel[lwt-sidebar-brighttext],
+body[lwt-sidebar-brighttext] {
+    --main-bgcolor: var(--dark-color);
+    --transparent-bgcolor: var(--accent-color);
+}
+
+
+/*================== NEW TAB BG COLOR ==================*/
+
+@media (prefers-color-scheme: dark) {
+    @-moz-document url("about:newtab"),
+    url("about:home"),
+    url("about:blank") {
+        body.activity-stream {
+            background-color: rgba(var(--dark-color), 1) !important;
+        }
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    @-moz-document url("about:newtab"),
+    url("about:home"),
+    url("about:blank") {
+        body.activity-stream {
+            background-color: rgba(var(--light-color), 1) !important;
+        }
+    }
+}
+
+
+/*================== SEARCH BAR ==================*/
+
+#root .search-wrapper input {
+    transition: all 0.3s ease !important;
+    background: rgba(var(--accent-color), 0.2) var(--newtab-search-icon) 12px center no-repeat !important;
+    background-size: 20px !important;
+    border: 2px solid !important;
+    border-color: rgba(var(--accent-color), 0.3) !important;
+    box-shadow: none !important;
+}
+
+#root .search-wrapper .search-inner-wrapper:hover input,
+#root .search-wrapper .search-inner-wrapper:active input,
+#root .search-wrapper input:focus {
+    border-color: rgba(var(--accent-color), 0.6) !important;
+}
+
+#root .search-wrapper .search-button,
+#root .search-wrapper .search-button {
+    transition: all 0.3s ease !important;
+}
+
+#root .search-wrapper .search-button:focus,
+#root .search-wrapper .search-button:hover {
+    background-color: rgba(var(--accent-color), 1) !important;
+}
+
+
+/*================== SEARCH BAR RESULTS ==================*/
+
+.contentSearchSuggestionTable .contentSearchSuggestionsContainer,
+.contentSearchSuggestionTable .contentSearchHeader {
+    background-color: rgba(var(--accent-color), 1) !important;
+}
+
+.contentSearchSuggestionTable .contentSearchSuggestionRow.selected,
+.contentSearchSuggestionTable .contentSearchOneOffItem.selected {
+    background-color: rgba(var(--secondary-accent-color), 0.2) !important;
+}
+
+.contentSearchSuggestionTable .contentSearchHeader,
+.contentSearchSuggestionTable .contentSearchSettingsButton,
+.contentSearchSuggestionTable .contentSearchOneOffsTable {
+    border-color: rgba(var(--secondary-accent-color), 0.2) !important;
+}
+
+.contentSearchSuggestionTable {
+    box-shadow: none !important;
+    border: 2px solid rgba(var(--secondary-accent-color), 0.2) !important;
+    border-radius: 3px !important;
+}
