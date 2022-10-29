@@ -7,6 +7,7 @@
 # previews
 >terminal fun / nvim
 ![20221029_09h15m09s_grim](https://user-images.githubusercontent.com/101421807/198831001-70a8b56d-28f6-4992-b2cd-1e0da364f91e.png)
+![20221028_20h04m18s_grim](https://user-images.githubusercontent.com/101421807/198834048-ff903f9b-ceaf-4ed0-ba49-8e4c79efc54c.png)
 </div>
 </div>
 
@@ -43,4 +44,10 @@ ranger calcure btop nvim most
 - Alacritty (gruvbox material theme, JetBrainsMono Nerd font)
 - Nautilus file manager
 - Firefox with simplify darkish css theme (get started with theming firefox [here](https://www.reddit.com/r/FirefoxCSS/wiki/index/tutorials/))
-- Waybar (the bar you see at the top)
+- Waybar (the bar you see at the top, GE Inspira font used)
+- Swaylockd (locking screen)
+- 
+
+## Special thanks to 
+- https://github.com/flick0 for the base config
+
