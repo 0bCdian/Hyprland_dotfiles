@@ -19,7 +19,7 @@ https://user-images.githubusercontent.com/101421807/198830707-203afa26-ef25-4fb6
 </div>
 
 ## Installation
-Install these and then copy my config files into your ~/.config folder
+Install these and then copy my config files into your ~/.config folder, check all the scripts and the configurations before doing anything, also change the paths to home, some are hardcoded as my own home path "/home/obsy" you should change them to "/home/your_user_name_here" or "~" or "$HOME" depending on the case
 ### Core Dependencies
 
 ```bash
