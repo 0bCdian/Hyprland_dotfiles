@@ -1,8 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export API_KEY:pk_ccaa34a02d71441ab62420eb24cbaa2e
 SETUVAR __fish_initialized:3400
 SETUVAR __tf_func:function\x20__tf_alias\x20\x2dd\x20\x22Correct\x20your\x20previous\x20console\x20command\x22\x3b\x20\x20set\x20\x2dl\x20fucked_up_command\x20\x24history\x5b1\x5d\x3b\x20\x20env\x20TF_SHELL\x3dfish\x20TF_ALIAS\x3d__tf_alias\x20PYTHONIOENCODING\x3dutf\x2d8\x20thefuck\x20\x24fucked_up_command\x20THEFUCK_ARGUMENT_PLACEHOLDER\x20\x24argv\x20\x7c\x20read\x20\x2dl\x20unfucked_command\x3b\x20\x20if\x20\x5b\x20\x22\x24unfucked_command\x22\x20\x21\x3d\x20\x22\x22\x20\x5d\x3b\x20\x20\x20\x20eval\x20\x24unfucked_command\x3b\x20\x20\x20\x20builtin\x20history\x20delete\x20\x2d\x2dexact\x20\x2d\x2dcase\x2dsensitive\x20\x2d\x2d\x20\x24fucked_up_command\x3b\x20\x20\x20\x20builtin\x20history\x20merge\x3b\x20\x20end\x3bend\x3b
-SETUVAR __tf_vers:The\x20Fuck\x203\x2e32\x20using\x20Python\x203\x2e10\x2e7\x20and\x20Fish\x20Shell\x203\x2e5\x2e1
+SETUVAR __tf_vers:The\x20Fuck\x203\x2e32\x20using\x20Python\x203\x2e10\x2e8\x20and\x20Fish\x20Shell\x203\x2e5\x2e1
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue

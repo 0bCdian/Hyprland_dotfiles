@@ -1,0 +1,10 @@
+#!/bin/bash
+FOLDER_PATH="/home/obsy/Pictures/walls/selected"
+LIST=($(ls $FOLDER_PATH | shuf))
+for image in "${LIST[@]}"
+do
+
+swww img $FOLDER_PATH/$image --transition-type grow --transition-fps 60 --transition-duration 1.7 --transition-bezier .73,.095,.3,1 
+ 
+sleep 0.5h
+done

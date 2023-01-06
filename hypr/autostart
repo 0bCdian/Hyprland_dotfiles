@@ -7,12 +7,18 @@ scripts=$config/scripts
 # waybar
 $scripts/launch_waybar &
 
-# wallpaper set to cloud.png
-swww init && swww img $HOME/.config/hypr/wallpapers/home-sweet-home.jpg --transition-type center --transition-fps 60 --transition-speed 16
+# initiate wallpaper daemon
+swww init
+#change wallpaper hourly from playlist
+$scripts/cycle_wall &	
 
-# effects
+# effects and notification daemon
 $scripts/rgb &
+dunst &
 
 # other
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+
+hyprctl switchxkblayout "rk-keyboard-5.1" next
+

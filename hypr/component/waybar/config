@@ -1,32 +1,35 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 51, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 2, // Gaps between modules (4px)
+    "height":40 ,// Waybar height (to be removed for auto height)
+    "margin": 10, 
+    //"width": 1920, // Waybar width
+    "spacing": 0,
+    "fixed-center": true, 
     // Choose the order of the modules
-    // "margin-left":25,
-    // "margin-right":25,
-    "margin-bottom":-11,
-    //"margin-top":5,
-    "modules-left": ["wlr/workspaces"],
-    "modules-right": ["cpu","memory","network","custom/cycle_wall","battery","tray"],
-    "modules-center": ["clock"],
+    "modules-left": ["wlr/workspaces",],
+    "modules-right": ["memory","cpu","battery","pulseaudio","backlight","network","hyprland/language","custom/cycle_wall","tray"],
+    "modules-center": ["clock","custom/weather"],
     // Modules configuration
-
 
     // custom modules //
     "custom/cycle_wall":{
-        "format":"       ",
+        "format":" ",
         // "interval": 1,
         "on-click": "~/.config/hypr/scripts/wall",
         "tooltip": false
-
+    },
+    "custom/weather":{
+    "format": " {}",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "/home/obsy/.config/hypr/scripts/weather.py",
+    "return-type": "json"
     },
     // End of custom modules //
     "wlr/workspaces": {
         "format": "{icon}",
-        "format-active": " {icon} ",
+        "format-active": "{icon}",
         "on-click": "activate"
         // "format-icons":{
         //   "10":"10"
@@ -34,52 +37,78 @@
     },
     "tray": {
         "icon-size": 21,
-        "spacing": 8,
-        "show-passive-items": false
+        "spacing": 4,
+        "show-passive-items": true,
+        "max-length": 6,
+        "min-length": 6,
+    },
+    "hyprland/language": {
+    "format-en": "Us",
+    "format-es": "Es",
+    "format": " {}",
+    "keyboard-name": "rk-keyboard-5.1",
+    "max-length": 5,
+    "min-length": 5,
+    "on-click": "hyprctl switchxkblayout rk-keyboard-5.1 next"
     },
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip": false,
         "interval": 60,
-        "format": "{:%H:%M}",
+       "format": "{:%a - %d - %H:%M}",
         "max-length": 25,
-        "on-click": "alacritty  --class calendar -e calcure"
-    },
+        "on-click": "alacritty  --class calendar -e calcure"},
     "cpu": {
         "interval":1,
-        "format": "{icon0} {icon1} {icon2} {icon3}",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+        "format":"{icon0}{icon1}{icon2}{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "on-click": "alacritty --class system_monitor -e btop",
+        "max-lenght": 25,
+        "min-length":6,
     },
     "memory": {
-        "format": "{percentage}% ",
+        "format":" {percentage}%",
         "interval": 1,
         "on-click": "alacritty --class system_monitor -e btop",
-        "max-lenght": 35
+        "max-lenght": 25,
+        "min-length":6,
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format": "{icon}{percent}%",
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "],
+        "on-scroll-up":"brightnessctl set 30+",
+        "on-scroll-down":"brightnessctl set 30-",
+        "max-lenght": 25,
+        "min-length":6,
     },
     "battery": {
         "states": {
+            "full":100,
             "warning": 50,
             "critical": 20
         },
-        "format": "{icon}  {capacity}%",
-        "format-charging": "{icon}  {capacity}%",
-        "format-plugged": "{icon} {capacity}%",
-         "format-good": "", // An empty format will hide the module
-         "format-full": "",
+        "interval":60,
+        "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
          "interface": "wlan0",
-        "format-wifi":  " 直  ",
-        "format-disconnected": "disconnected wifi",
+        "format-wifi":  " ",
+        "format-disconnected": "  睊  ",
         "tooltip-format": "{ifname} via {gwaddr} ",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "on-click": "/home/obsy/.local/bin/rofi-wifi-menu"
-    }
+        "tooltip-format-wifi": "{essid} {signalStrength}%",
+        "on-click": "alacritty --class network -e nmtui"
+    },
+    "pulseaudio": {
+    "format": "蓼 {volume}%",
+    "format-bluetooth": " {volume}%",
+    "scroll-step": 1,
+    "on-click-right": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"],
+    "max-lenght": 25,
+    "exec":"pactl --format=json list sinks | jq -cM --unbuffered \"map(select(.name == \\\"$(pactl get-default-sink)\\\"))[0].properties | [.\\\"media.name\\\",.\\\"alsa.name\\\",.\\\"node.nick\\\",.\\\"alsa.long_card_name\\\"] | map(select(length>0))[0] | {text:.}\"",
+    "exec-if": "sleep 0.1", // Give enough time for `pactl get-default-sink` to update
+    "on-click": "pactl --format=json list sinks short | jq -cM --unbuffered \"[.[].name] | .[((index(\\\"$(pactl get-default-sink)\\\")+1)%length)]\" | xargs pactl set-default-sink"
+}
 }
 

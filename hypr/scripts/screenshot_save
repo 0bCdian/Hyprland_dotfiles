@@ -1,0 +1,10 @@
+#!/bin/fish
+killall slurp
+grim -g "$(slurp -o)" $HOME/Pictures/Screenshots/$(date '+%c.png')
+
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 17px;
+    /* font-weight: bold; */
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: #45403d;
+
+    margin: 10px 5px;
+}
+
+.modules-right {
+    font-size: 10px;
+    border-top: 3px solid #75a197;
+    border-left: 3px solid #a0aa62;
+    border-right: 3px solid #d35e58;
+}
+.modules-center {
+    border: 3px solid #75a197;
+}
+.modules-left {
+    border: 3px solid #d4be98;
+}
+tooltip {
+    background: #45403d;
+    border: 2px solid #d4be98;
+}
+tooltip label {
+    color: #ebdbb2;
+    background-color: transparent;
+}
+
+#workspaces button {
+    margin: 0;
+    color: #ebdbb2;
+    border-bottom: 0.2em solid transparent;
+    font-weight: bolder;
+    font-style: normal;
+}
+
+#workspaces button.active {
+    color: #ebdbb2;
+
+    border-bottom: 0.2em solid #d3869b;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.818);
+    transition: all 0.1s ease-in-out;
+}
+
+#clock,
+#custom-weather {
+    font-family: "GE Inspira";
+    font-weight: bolder;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.818);
+    background-color: #45403d;
+    color: #ebdbb2;
+}
+#clock {
+    padding: 0 0 0 1.5em;
+    /* border-bottom: 0.2em solid #75a197; */
+}
+#custom-weather {
+    padding: 0 1.5em 0 0.5em;
+    /* border-bottom: 0.2em solid #75a197; */
+}
+#memory {
+    color: #ebdbb2;
+    padding: 0 0.3em;
+    border-bottom: 0.2em solid #a0aa62;
+}
+
+#pulseaudio {
+    margin: 0;
+    padding: 0 0.5em 0 0.4em;
+    color: #ebdbb2;
+    border-bottom: 0.2em solid #c2954e;
+}
+
+#backlight {
+    margin: 0;
+    padding: 0 0.5em 0 0.4em;
+    color: #ebdbb2;
+    border-bottom: 0.2em solid #c2954e;
+}
+#cpu {
+    margin: 0;
+    padding: 0 0.1em 0 0.1em;
+    color: #ebdbb2;
+    border-bottom: 0.2em solid #a0aa62;
+}
+#network {
+    margin: 0;
+    padding: 0 0.4em 0 0.5em;
+    color: #ebdbb2;
+    border-bottom: 0.2em solid #c2954e;
+}
+#custom-cycle_wall {
+    margin: 0;
+    padding: 0 0.5em;
+    color: #ebdbb2;
+    border-bottom: 0.2em solid #d35e58;
+}
+
+#language {
+    margin: 0;
+    padding: 0 0.1em;
+    color: #ebdbb2;
+    border-bottom: 0.2em solid #d35e58;
+}
+#tray {
+    margin: 0;
+    padding: 0 0.2em;
+    color: #ebdbb2;
+    border-bottom: 0.2em solid #d35e58;
+}
+#battery {
+    margin: 0;
+    padding: 0 0.5em 0 0.4em;
+    color: #ebdbb2;
+    border-bottom: 0.2em solid #a0aa62;
+}

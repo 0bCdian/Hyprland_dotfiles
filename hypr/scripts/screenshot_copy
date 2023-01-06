@@ -1,0 +1,5 @@
+#!/bin/fish
+killall slurp 
+grim -g "$(slurp -o)" - | wl-copy
+
+
