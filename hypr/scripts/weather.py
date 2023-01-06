@@ -26,9 +26,9 @@ WEATHER_ICON = {
 }
 
 data = {}
-apiKey = 'a44d9a77f8c44c0eae4c88a4931c573f'
-lat = '-33.430740'
-lon = '-70.564410'
+apiKey = # Create an openweather account and get the api key and paste it here
+lat = # Get your location latitude and paste it here
+lon = # Get your location longitude and paste it here
 weather = requests.get(
     f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}&units=metric').json()
 
