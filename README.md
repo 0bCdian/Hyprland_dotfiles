@@ -13,15 +13,15 @@
 </div>
 
 
-# Contents 📖
+# :clipboard: Contents 
 - [Installation](#Installation-⚙️)
-- [Apps](#apps-i-use-)
+- [Apps](#)
 - [Fonts](#Fonts)
 - [Gallery](#Gallery)
 - [Special Thanks]()
 
  -----------
-## Installation ⚙️
+## :construction_worker: Installation 
 Install these and then copy my config files into your ~/.config folder, for more instructions giyf.
 > disclaimer some scripts and configs have my own home path, change it to yours or it won't work. ie "home/obsy/path_to_script" change "home/obsy" to your home path
 > if something breaks, google it first 
@@ -42,7 +42,7 @@ ranger btop nvim most bat
 
 ---------------------------
  
-## Apps I use 👇🏾
+## Apps I use :point_down:
 - rofi-lbonn-wayland-git = launcher/emojipicker/windowpicker
 - vscode (JetBrains Mono Nerd Font + Gruvbox Material Dark Theme)
 - nvim with [Astro nvim setup](https://astronvim.com/)
@@ -66,7 +66,7 @@ ranger btop nvim most bat
 
 ------------
 
-## Fonts 🔤
+## Fonts :pencil:
 
 I mainly use "Ubuntu nerd fonts" for the system fonts, "jetbrains mono nerd font", "GE Inspira" for waybar and sddm, go to [nerd fonts](https://www.nerdfonts.com/) and grab them there.
 
@@ -76,7 +76,7 @@ I mainly use "Ubuntu nerd fonts" for the system fonts, "jetbrains mono nerd font
 <div align="center">
   
   
-## Gallery 📸
+## Gallery :camera:
 ![2023-05-18_17-26-10](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/9a23f151-3394-4266-b2f0-aa81dead2dc1)
 ![2023-05-18_17-26-46](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/34ac0d8a-0e6c-448a-b00e-dbfd1d49d6e2)
 ![2023-05-18_17-27-26](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/9aafa6ff-a4a7-488e-b133-0a599e58ec55)
@@ -97,7 +97,7 @@ I mainly use "Ubuntu nerd fonts" for the system fonts, "jetbrains mono nerd font
 
 
 ------------------------
-## ✨ Special thanks to ✨
+## :sparkles: Special thanks to :sparkles:
 - https://github.com/flick0 for the base config
 - https://github.com/Gustash for the window capture script in Hyprshot
 - https://github.com/adi1090x for the rofi themes
