@@ -1,0 +1,7 @@
+#!/bin/bash
+FOLDER_PATH="/home/obsy/Pictures/walls/gruvboxyy"
+IMAGE=($(ls $FOLDER_PATH | shuf -n 1))
+set_background.sh "$FOLDER_PATH/$IMAGE"
+# restart wall_schedule
+killall wall_schedule
+/home/obsy/.config/hypr/scripts/wall_schedule &

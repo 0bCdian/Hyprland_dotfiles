@@ -1,0 +1,3 @@
+#!/bin/bash
+#hide secondary waybar if exists, if not then run it 
+kill -s USR1 $(pidof taskbar) || /home/obsy/.config/hypr/scripts/taskbar

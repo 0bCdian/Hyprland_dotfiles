@@ -1,0 +1,21 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "left", // Waybar position (top|bottom|left|right)
+  "spacing": 0,
+  "fixed-center": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "modules-left": ["wlr/taskbar"],
+  "wlr/taskbar": {
+    "all-outputs": true,
+    "format": "{icon}",
+    "icon-size": 32,
+    "icon-theme": "Papirus",
+    "tooltip-format": "{title}",
+    "on-click": "exec notify-send 'hi'",
+    "on-click-right": "maximize",
+    "on-click-middle": "close",
+    "ignore-list": []
+  }
+}

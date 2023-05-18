@@ -1,0 +1,4 @@
+timeout 300 '/home/obsy/.config/hypr/scripts/lock' 
+timeout 600 'hyprctl dispatch dpms off && systemctl suspend' resume 'hyprctl dispatch dpms on'
+before-sleep '/home/obsy/.config/hypr/scripts/lock'
+

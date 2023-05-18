@@ -1,0 +1,4 @@
+#!/bin/bash
+#Execute secondary waybar with the name "taskbar" to differentiate from main waybar
+taskbar="waybar -c $HOME/.config/waybar/configTaskBar.jsonc -s $HOME/.config/waybar/styleTaskBar.css"
+bash -c "exec -a taskbar $taskbar &" 

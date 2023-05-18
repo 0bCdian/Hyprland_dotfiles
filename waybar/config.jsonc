@@ -1,0 +1,181 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 40,
+  "width": 1900,
+  "margin-bottom": 5,
+  "spacing": 0,
+  "fixed-center": true,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+
+  "modules-left": ["wlr/workspaces"],
+  "modules-right": [
+    "memory",
+    "cpu",
+    "disk",
+    "battery",
+    "pulseaudio",
+    "backlight",
+    "custom/cycle_wall",
+    "hyprland/language",
+    "tray"
+  ],
+  "modules-center": ["clock", "custom/updates", "custom/weather"],
+  "custom/cycle_wall": {
+    "format": " ",
+    "on-click": "~/.config/hypr/scripts/wall",
+    "tooltip": true,
+    "tooltip-format": "Change wallpaper"
+  },
+  "image#sprite1": {
+    "path": "/home/obsy/.config/waybar/Rectangle1.svg",
+    "size": 40
+  },
+  "custom/updates": {
+    "format": " ",
+    "return-type": "json",
+    "exec": "~/.config/waybar/updates.sh",
+    "interval": 3600,
+    "on-click": "exec kitty  --class calendar -e yay -Syu",
+    "on-click-right": "exec ~/.config/waybar/updates.sh",
+    "tooltip": true
+  },
+  "custom/show_taskbar": {
+    "format": " ",
+    "exec": "~/.config/hypr/scripts/taskbar",
+    "on-click": "~/.config/hypr/scripts/toggle_taskbar"
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 1, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources/custom_modules folder
+  },
+  "custom/weather": {
+    "format": " {}",
+    "tooltip": true,
+    "interval": 3600,
+    "on-click": "/home/obsy/.config/hypr/scripts/weather.py && notify-send 'Updated weather!'",
+    "exec": "/home/obsy/.config/hypr/scripts/weather.py",
+    "return-type": "json"
+  },
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "format-active": "{icon}",
+    "on-click": "activate"
+  },
+  "hyprland/window": {
+    "format": " {}",
+    "separate-outputs": false,
+    "max-length": 25
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 4,
+    "show-passive-items": false,
+    "max-length": 6,
+    "min-length": 6
+  },
+  "hyprland/language": {
+    "format": " {}",
+    "format-en": "Us",
+    "format-es": "Es",
+    "keyboard-name": "sonix-usb-device",
+    "max-length": 5,
+    "min-length": 5,
+    "on-click": "~/.config/hypr/scripts/change_keyboard_layout.sh",
+    "on-click-right": "~/.config/rofi/applets/bin/clipboard.sh"
+  },
+  "clock": {
+    "tooltip": true,
+    "tooltip-format": "{: %A, %B %e %Y}",
+    "interval": 60,
+    "format": "   {:%H:%M}",
+    "max-length": 25,
+    "on-click": "eww open --toggle dashboard"
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "{icon0}{icon1}{icon2}{icon3}",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "kitty --class system_monitor -e btop",
+    "max-lenght": 25,
+    "min-length": 6
+  },
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 1,
+    "on-click": "kitty --class system_monitor -e btop",
+    "max-lenght": 25,
+    "min-length": 6
+  },
+  "backlight": {
+    "format": "{icon}{percent}%",
+    "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "],
+    "on-scroll-up": "brightnessctl set 30+",
+    "on-scroll-down": "brightnessctl set 30-",
+    "max-lenght": 25,
+    "min-length": 6
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    //"format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
+    "on-click": "kitty --class system_monitor -e btop"
+  },
+  "network": {
+    "interface": "wlan0",
+    "format-wifi": " ",
+    "format-disconnected": "  睊  ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "tooltip-format-wifi": "{essid} {signalStrength}%",
+    "on-click": "kitty --class network -e nmtui"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "󰋊 {percentage_used}%",
+    "path": "/",
+    "tooltip": true,
+    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+    "on-click": "kitty --class system_monitor -e ncdu --color dark"
+  },
+
+  "pulseaudio": {
+    "format": "蓼 {volume}%",
+    "format-bluetooth": " {volume}%",
+    "scroll-step": 1,
+    "on-click-right": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"],
+    "max-lenght": 25,
+    "exec": "pactl --format=json list sinks | jq -cM --unbuffered \"map(select(.name == \\\"$(pactl get-default-sink)\\\"))[0].properties | [.\\\"media.name\\\",.\\\"alsa.name\\\",.\\\"node.nick\\\",.\\\"alsa.long_card_name\\\"] | map(select(length>0))[0] | {text:.}\"",
+    "exec-if": "sleep 0.1", // Give enough time for `pactl get-default-sink` to update
+    "on-click": "pactl --format=json list sinks short | jq -cM --unbuffered \"[.[].name] | .[((index(\\\"$(pactl get-default-sink)\\\")+1)%length)]\" | xargs pactl set-default-sink"
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "Papirus",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["Alacritty", "kitty"],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    }
+  }
+}

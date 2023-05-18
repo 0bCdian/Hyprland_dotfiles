@@ -1,0 +1,31 @@
+* {
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 17px;
+  /* font-weight: bold; */
+  border-radius: 0px;
+  background-color: transparent;
+}
+window#waybar {
+  border-radius: 10px;
+}
+
+tooltip {
+  background-color: #323232;
+  color: #ebdbb2;
+  border-radius: 10px;
+}
+#taskbar button {
+  border-radius: 10px;
+  padding: 5px;
+  margin-right: 0.2rem;
+}
+
+#taskbar button:hover {
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgba(50, 50, 50, 0.1);
+}
+
+#taskbar button.active {
+  background-color: #ebdbb2;
+}

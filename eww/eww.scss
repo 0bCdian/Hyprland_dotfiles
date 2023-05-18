@@ -1,0 +1,73 @@
+window {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 0;
+}
+button {
+  all: unset;
+}
+
+.container_player_card {
+  background: center/100%;
+  transition: all 0.35s cubic-bezier(0, 0, 0.3, 1);
+  border-radius: 40px;
+  margin: 0 5;
+}
+
+.app_icon {
+  opacity: 0.9;
+  margin: 15px 0 0 15px;
+}
+.labels-play-container {
+  margin-bottom: 10px;
+}
+.current_song {
+  margin-left: 1rem;
+  margin-top: 25px;
+
+  font-weight: bold;
+}
+.current_artist {
+  margin-left: 1rem;
+  margin-top: 5px;
+
+  font-family: light;
+}
+.play_button {
+  font-size: 70px;
+  margin-right: 10px;
+}
+
+.play_button {
+  transition: all 0.2s cubic-bezier(0, 0, 0.3, 1);
+}
+.play_button:active {
+  color: #323232;
+  font-size: 69px;
+}
+.control_buttons {
+  transition: all 0.2s ease-in-out;
+  font-size: 30px;
+  margin-left: 1rem;
+}
+.control_buttons:active {
+  color: #323232;
+  font-size: 25px;
+}
+.control_button_box {
+  margin-top: 0.5rem;
+}
+
+.previous {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.next {
+  margin-right: 0.5rem;
+}
+.loop {
+  margin-right: 1rem;
+}
+.shuffle {
+  margin-right: 0.5rem;
+}

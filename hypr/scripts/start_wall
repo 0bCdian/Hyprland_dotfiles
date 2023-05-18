@@ -1,0 +1,6 @@
+#!/bin/bash
+$(swww kill && swww init)|| swww init
+IMG_NAME=$(ls /home/obsy/Pictures/walls/gruvboxyy | shuf -n 1)
+IMG_PATH_FULL=$HOME"/Pictures/walls/gruvboxyy/"$IMG_NAME
+set_background.sh "$IMG_PATH_FULL"
+/home/obsy/.config/hypr/scripts/wall_schedule &

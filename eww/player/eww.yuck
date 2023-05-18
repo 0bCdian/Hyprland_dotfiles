@@ -1,0 +1,111 @@
+(defwidget spotify []
+  
+  (box
+    :class "container_player_card"
+    :orientation "v"
+    :space-evenly false
+    :valign "center"
+    :height 230
+    :style "
+    background-image: radial-gradient(
+      transparent,
+    ${metadata.dark} 350%),
+    url(\"./album_art.png\");
+    color: ${metadata.tint}
+    "
+    
+   
+     (label
+          :class "app_icon"
+          :valign "start"
+          :halign "start"
+          :style "color:${metadata.tint}; "
+        :text " ")
+    
+    (box
+      :space-evenly false
+      :spacing 0
+      :class "labels-play-container"
+      (box
+        :class "artist_and_song_container"
+        :orientation "v"
+        (label
+          :class "current_song"
+          :hexpand true
+          :limit-width 35
+          :text {metadata.title}
+          :halign "start"
+          :valign "start"
+        )
+        (label
+          :class "current_artist"
+          :hexpand true
+          :limit-width 30
+          :text {metadata.artist}
+          :halign "start"
+          :valign "start"
+        )
+      )
+      (button
+        :hexpand true
+        :class "play_button"
+        :halign "end"
+        :onclick "playerctl -p spotify play-pause"
+        (label :text "󰐌" )
+      )
+    )
+    (box
+      :space-evenly false
+      :class "control_button_box"
+      (button
+        :hexpand false
+        :class "control_buttons previous"
+        :halign "start"
+        :onclick "playerctl -p spotify previous"
+        (label
+        :text "󰼨")
+      )
+      (scale
+        :class "progress_song"
+        :value progress_song
+        :orientation "horizontal"
+        :min 0
+        :max 101
+        :hexpand true
+        :draw-value true
+        :onchange "./src/change_position.fish {}"
+      )
+      (button
+        :hexpand false
+        :class "control_buttons next"
+        :halign "end"
+        :onclick "playerctl -p spotify next"
+        (label
+        :text "󰼧")
+      )
+      (button
+        :hexpand false
+        :class "control_buttons shuffle"
+        :halign "end"
+        :onclick "playerctl -p spotify shuffle toggle"
+        (label
+        :text "󰒟")
+      )
+      (button
+        :hexpand false
+        :class "control_buttons loop"
+        :halign "end"
+        :onclick "/src/toggle_loop.fish spotify"
+        (label
+        :text {toggle_status ? "󰕇" :"󰑘" })
+      )
+      
+      
+    )
+  )
+  
+  
+  
+  
+  
+)

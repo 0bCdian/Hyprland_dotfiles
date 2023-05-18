@@ -1,0 +1,153 @@
+(defwindow dashboard
+  :class "dashboard"
+  :stacking "fg"
+  :wm-ignore true
+  :monitor 0
+  :geometry (geometry
+    :width "26%"
+    
+  :x "74%")
+  (player)
+)
+
+
+
+(deflisten play_status
+`playerctl status -F`)
+(deflisten shuffle_status
+`playerctl shuffle -F`)
+(deflisten loop_status
+`playerctl loop -F`)
+(defpoll progress_song :interval "1s" :initial 0 "./src/song_progress.fish")
+(deflisten metadata :initial '{
+  "url": "/spotify_cache/album_art.png",
+  "shadow": "#ebdbb2",
+  "tint": "#ebdbb2",
+  "dark": "#323232",
+  "title": "Unknown",
+  "artist": "Unknown",
+  "current_player": "audio-player"
+  }'
+`python ./src/metadata.py`)
+
+(defwidget player []
+  (eventbox
+    
+    :onscroll "[ {} = up ] && playerctl volume 0.05+; [ {} = down ] && playerctl volume 0.02- "
+    (box
+      :class "container_player_card"
+      :orientation "v"
+      :space-evenly false
+      :valign "start"
+      :tooltip "Scroll to change the volume"
+      :height 230
+      :style "
+      background-image:url(\"./spotify_cache/album_art_modified.png\");
+      box-shadow: inset 0 0 5em 1em ${metadata.dark};
+      color: ${metadata.tint}
+      "
+      
+      (button :onclick "/home/obsy/.config/eww/src/toggle_player.sh"
+        (image
+          :class "app_icon"
+          :valign "start"
+          :halign "start"
+          :path {"/home/obsy/.icons/Papirus/48x48/apps/${metadata.current_player}.svg"}
+          :tooltip "toggle player"
+        )
+      )
+      
+      
+      (box
+        :space-evenly false
+        :spacing 0
+        :class "labels-play-container"
+        (box
+          :class "artist_and_song_container"
+          :orientation "v"
+          (label
+            :class "current_song"
+            :hexpand true
+            :limit-width 35
+            :text {metadata.title}
+            :halign "start"
+            :valign "start"
+          )
+          (label
+            :class "current_artist"
+            :hexpand true
+            :limit-width 20
+            :text {metadata.artist}
+            :halign "start"
+            :valign "start"
+          )
+        )
+        (button
+          :hexpand true
+          :class "play_button"
+          :halign "end"
+          :onclick "playerctl play-pause"
+          (label :text {play_status == 'Playing' ? "󰏥" : "󰐌"} )
+        )
+      )
+      (box
+        :space-evenly false
+        :class "control_button_box"
+        (button
+          :hexpand false
+          :class "control_buttons previous"
+          :halign "start"
+          :onclick "playerctl previous"
+          (label
+          :text "󰼨")
+        )
+        (scale
+          :class "progress_song"
+          :value progress_song
+          :orientation "horizontal"
+          :min 0
+          :max 101
+          :hexpand true
+          :onchange "./src/change_position.fish {}"
+        )
+        (button
+          :hexpand false
+          :class "control_buttons next"
+          :halign "end"
+          :onclick "playerctl next"
+          (label
+          :text "󰼧")
+        )
+        (button
+          :hexpand false
+          :class "control_buttons shuffle"
+          :halign "end"
+          :onclick "playerctl -p spotify shuffle toggle"
+          (label
+          :text {shuffle_status == "Off" ? "󰒞" : "󰒟"})
+        )
+        (button
+          :hexpand false
+          :class "control_buttons loop"
+          :halign "end"
+          :onclick "./src/toggle_loop.fish spotify"
+          (label
+          :text {loop_status == "None" ? "󰕇" :"󰑘" })
+        )
+        
+        
+      )
+    )
+    
+  )
+  
+  
+  
+  
+  
+  
+)
+
+
+
+

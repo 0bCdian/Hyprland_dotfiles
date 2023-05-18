@@ -1,0 +1,130 @@
+* {
+  background-image: none;
+  font-family: 'Ubuntu';
+}
+
+window {
+  background-color: transparent;
+}
+
+button {
+  color: #ebdbb2;
+  background-color: #323232;
+  outline-style: none;
+  border: none;
+  border-width: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10%;
+  border-radius: 0px;
+  box-shadow: none;
+  text-shadow: none;
+  animation: gradient_f 20s ease-in infinite;
+}
+
+button:focus {
+  background-color: #323232;
+  background-size: 20%;
+}
+
+button:hover#lock {
+  background-color: #565555;
+  background-size: 25%;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
+}
+
+button:hover#logout {
+  background-color: #565555;
+  background-size: 25%;
+  margin: 0px 30px 30px 30px;
+  border-radius: 20px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
+}
+
+button:hover#suspend {
+  background-color: #565555;
+  background-size: 25%;
+  margin: 0px 0px 30px 30px;
+  border-radius: 20px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
+}
+
+button:hover#hibernate {
+  background-color: #565555;
+  background-size: 25%;
+  margin: 30px 30px 0px 0px;
+  border-radius: 20px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
+}
+
+button:hover#shutdown {
+  background-color: #565555;
+  background-size: 25%;
+  margin: 30px 30px 0 30px;
+  border-radius: 20px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
+}
+
+button:hover#reboot {
+  background-color: #565555;
+  background-size: 25%;
+  margin-left: 30px;
+  margin-top: 30px;
+  border-radius: 20px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
+}
+
+#lock {
+  background-image: image(
+    url('/usr/share/wlogout/icons/lock.png'),
+    url('/usr/local/share/wlogout/icons/lock.png')
+  );
+  border-top-left-radius: 50px;
+}
+
+#logout {
+  background-image: image(
+    url('/usr/share/wlogout/icons/logout.png'),
+    url('/usr/local/share/wlogout/icons/logout.png')
+  );
+}
+
+#shutdown {
+  background-image: image(
+    url('/usr/share/wlogout/icons/shutdown.png'),
+    url('/usr/local/share/wlogout/icons/shutdown.png')
+  );
+}
+
+#reboot {
+  background-image: image(
+    url('/usr/share/wlogout/icons/reboot.png'),
+    url('/usr/local/share/wlogout/icons/reboot.png')
+  );
+  border-bottom-right-radius: 50px;
+}
+
+#suspend {
+  background-image: image(
+    url('/usr/share/wlogout/icons/suspend.png'),
+    url('/usr/local/share/wlogout/icons/suspend.png')
+  );
+  border-top-right-radius: 50px;
+}
+
+#hibernate {
+  background-image: image(
+    url('/usr/share/wlogout/icons/hibernate.png'),
+    url('/usr/local/share/wlogout/icons/hibernate.png')
+  );
+  border-bottom-left-radius: 50px;
+}
