@@ -4,8 +4,11 @@
 ```ocaml
 ☕ Hyprland with "a touch of gruv" ☕
 ```
+  -----------
 ![2023-05-18_02-59-48](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/7ec3cd7b-633d-46c2-aafb-95ddf4e1cec0)
 ![2023-05-17_14-14-55](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/eb55c8a4-9104-40d9-a2d0-c4eb3402e91c)
+  
+----------
 </div>
 </div>
 
@@ -14,21 +17,21 @@
 - [Installation](#Installation)
 - [Optional Dependencies](#Optional-dependencies)
 - [Apps](#Apps-I-use)
-- [Fonts]()
+- [Fonts](#Fonts)
 - [Gallery](#Gallery)
 - [Special Thanks]()
 
-
+ -----------
 ## Installation
-Install these and then copy my config files into your ~/.config folder
+Install these and then copy my config files into your ~/.config folder, for more instructions giyf.
 > disclaimer some scripts and configs have my own home path, change it to yours or it won't work. ie "home/obsy/path_to_script" change "home/obsy" to your home path
 > if something breaks, google it first 
-## Core Dependencies
+### Core Dependencies
 
 ```bash
 hyprland waybar-hyprland-git eww-wayland network-manager-applet blueman python rustup kitty fish rofi-emoji rofi-lbonn-wayland-git xdg-desktop-portal-hyprland swayidle swaylock-effects grim slurp dunst wl-clipboard cliphist swww 
 ```
-## Optional dependencies
+### Optional dependencies
 #### Terminal fun
 ```Bash
 cava cbonsai neofetch pokemon-colorscripts-git
@@ -37,6 +40,9 @@ cava cbonsai neofetch pokemon-colorscripts-git
 ```Bash
 ranger btop nvim most bat
 ```
+
+---------------------------
+
 ## Apps I use
 - rofi-lbonn-wayland-git = launcher/emojipicker/windowpicker
 - vscode (JetBrains Mono Nerd Font + Gruvbox Material Dark Theme)
@@ -51,12 +57,22 @@ ranger btop nvim most bat
 - Swaylock effects (locking screen)
 - Swayidle idle daemon
 - Cliphist clipboard manager
-#### GTK,Icon and cursor themes
+- Sddm-git for the login manager with the [sugar candy theme](https://github.com/Kangie/sddm-sugar-candy)
+- Grub theme = [Tartarus Grub](https://github.com/AllJavi/tartarus-grub)
+#### GTK,Icon and cursor themes 
 - GTK = https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme
 - Cursor = https://www.gnome-look.org/p/1197198
 - Icons = https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
-- Papirus folders to change the folder colors in nautilus.
-  
+
+
+------------
+
+## Fonts
+
+I mainly use "Ubuntu nerd fonts" for the system fonts, "jetbrains mono nerd font", "GE Inspira" for waybar and sddm, go to [nerd fonts](https://www.nerdfonts.com/) and grab them there.
+
+-------------
+
 <div align="justify">
 <div align="center">
   
@@ -71,10 +87,17 @@ ranger btop nvim most bat
 ![imagen](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/b066d93b-1f15-44b7-be18-4db881198a1f)
 ![imagen](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/40f2ea4e-dc07-4200-936a-f977d0189eed)
 ![imagen](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/b8050e55-92cc-4308-adea-1844938a70d3)
+ > Sddm login manager
+![imagen](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/bf1e6ef2-a6a4-4344-a038-6608ac7af8a7)
+ > Grub theme 
+ ![imagen](https://github.com/0bCdian/Hyprland_dotfiles/assets/101421807/3d7fd794-98bf-4872-9119-4ef7300347f9)
+ 
 
 </div>
 </div>
 
+
+------------------------
 ## Special thanks to 
 - https://github.com/flick0 for the base config
 - https://github.com/Gustash for the window capture script in Hyprshot
