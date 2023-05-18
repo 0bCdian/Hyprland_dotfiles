@@ -14,7 +14,7 @@
 
 
 # Contents 📖
-- [Installation](#Installation-⚙️)
+- [Installation](#installation-)
 - [Apps](#Apps-I-use)
 - [Fonts](#Fonts)
 - [Gallery](#Gallery)
