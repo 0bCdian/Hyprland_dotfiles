@@ -14,11 +14,11 @@
 
 
 # :clipboard: Contents 
-- [Installation](#Installation-⚙️)
-- [Apps](#)
-- [Fonts](#Fonts)
-- [Gallery](#Gallery)
-- [Special Thanks]()
+- [Installation](#construction_worker-installation)
+- [Apps](#apps-i-use-point_down)
+- [Fonts](#fonts-pencil)
+- [Gallery](#gallery-camera)
+- [Special Thanks](#sparkles-special-thanks-to-sparkles)
 
  -----------
 ## :construction_worker: Installation 
