@@ -102,4 +102,4 @@ I mainly use "Ubuntu nerd fonts" for the system fonts, "jetbrains mono nerd font
 - https://github.com/flick0 for the base config
 - https://github.com/Gustash for the window capture script in Hyprshot
 - https://github.com/adi1090x for the rofi themes
-- https://github.com/SolDoesTech for the inspiration and some 
+- https://github.com/SolDoesTech for various ideas.
