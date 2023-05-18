@@ -26,9 +26,9 @@ WEATHER_ICON = {
 }
 
 data = {}
-apiKey = "a44d9a77f8c44c0eae4c88a4931c573f"
-lat = "43.528926"
-lon = "-5.6556273"
+apiKey = "your_api_key here"
+lat = "Your Latitude here"
+lon = "your longitude here"
 try:
     weather = requests.get(
         f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}&units=metric"
@@ -47,5 +47,5 @@ finally:
     data[
         "tooltip"
     ] = f"<b> {WEATHER_ICON[weather['weather'][0]['icon']]} {weather['weather'][0]['description']} </b>\n"
-    data["tooltip"] += f"Feels like {str(int(weather['main']['feels_like']))}° in Gijón"
+    data["tooltip"] += f"Feels like {str(int(weather['main']['feels_like']))}° Your City here"
     print(json.dumps(data))

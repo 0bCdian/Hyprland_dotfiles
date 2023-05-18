@@ -120,7 +120,7 @@ shot5 () {
 
 shot10 () {
 	countdown '10'
-	sleep 1 && grim -g "$("$slurp_select_area")" - | convert - -trim +repage - | swappy -f -
+	sleep 1 && grim -g "$(slurp -d -b '#ebdbb244' -c '#323232FF' -B '#323232FF' -F 'JetBrains Mono Nerd Font' -w '1')" - | convert - -trim +repage - | swappy -f -
 	notify_view "$1"
 }
 
