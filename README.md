@@ -11,11 +11,11 @@
 
 
 # Contents
-- [Installation](##Installation)
-- [Optional Dependencies](##Optional-dependencies)
-- [Apps](##Apps-I-use)
+- [Installation](#Installation)
+- [Optional Dependencies](#Optional-dependencies)
+- [Apps](#Apps-I-use)
 - [Fonts]()
-- [Gallery](##Gallery)
+- [Gallery](#Gallery)
 - [Special Thanks]()
 
 
