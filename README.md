@@ -45,10 +45,9 @@ ranger btop nvim most bat
 ## Apps I use :point_down:
 - rofi-lbonn-wayland-git = launcher/emojipicker/windowpicker
 - vscode (JetBrains Mono Nerd Font + Gruvbox Material Dark Theme)
-- nvim with [Astro nvim setup](https://astronvim.com/)
 - Obsidian = markdown editor (obsidian gruvbox theme)
 - Spotify + Spicetify 
-- nvim with astronvim and [Sainnhe's gruvbox material theme](https://github.com/sainnhe/gruvbox-material)
+- nvim with with [Astro nvim setup](https://astronvim.com/) and [Sainnhe's gruvbox material theme](https://github.com/sainnhe/gruvbox-material)
 - Kitty ([gruvbox material theme](https://github.com/wdomitrz), JetBrainsMono Nerd font)
 - Nautilus file manager
 - Firefox with simplify darkish css theme (get started with theming firefox [here](https://www.reddit.com/r/FirefoxCSS/wiki/index/tutorials/))
