@@ -14,8 +14,7 @@
 
 
 # Contents 📖
-- [Installation](#Installation)
-- [Optional Dependencies](#Optional-dependencies)
+- [Installation](#Installation-⚙️)
 - [Apps](#Apps-I-use)
 - [Fonts](#Fonts)
 - [Gallery](#Gallery)
